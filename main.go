@@ -3,12 +3,24 @@ package main
 import (
 	"fmt"
 	"github.com/mg52/data-structures-and-algorithms/bst"
+	"github.com/mg52/data-structures-and-algorithms/graph/directed_graphs/unweighted_directed_graph"
 	"github.com/mg52/data-structures-and-algorithms/linkedlist"
 	"math/rand"
 )
 
 func main() {
-	//var t bst
+
+	g := unweighted_directed_graph.NewGraph(4)
+	g.AddEdge(0, 1)
+	g.AddEdge(0, 2)
+	g.AddEdge(1, 2)
+	g.AddEdge(2, 0)
+	g.AddEdge(2, 3)
+	g.AddEdge(3, 3)
+	result := g.DFS(0)
+
+	fmt.Println("unweighted_directed_graph DFS:", result)
+
 	t := bst.NewBST()
 
 	t.Insert('F')
